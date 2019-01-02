@@ -12,7 +12,6 @@ class Application
     
     @@items = Item.all
     
-    route_match = false
     route_match = true if req.path.match(/items/)
     find_this = req.path.split("/items").last if route_match
     found_item = ""

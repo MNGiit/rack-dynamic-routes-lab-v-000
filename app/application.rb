@@ -36,7 +36,12 @@ class Application
   end # end of def route_not_found
   
 end # end of class
-
+    # if route_match
+    #  route_item(resp, item_name)
+    # else
+    #  route_not_found(resp)
+    # end # end of nested if
+    
     # find_this = req.path.split("/items").last if route_match
     # found_item = ""
     

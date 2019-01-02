@@ -26,7 +26,7 @@ class Application
         resp.write "Item not found"
       end
     else
-      self.route_not_found
+      route_not_found(resp)
     end # end of nested if
     
     resp.finish
@@ -42,7 +42,7 @@ class Application
       end
   end # end of def route_item
   
-  def route_not_found
+  def route_not_found(resp)
     resp.status = 404
     resp.write "Item not found"
   end # end of def route_not_found

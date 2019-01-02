@@ -19,7 +19,7 @@ class Application
     
     if route_match
       # check for item name
-      if find_this
+      if req.path.split("/items").last
         found_item = ""
         @@items.each do |item|
           found_item = item if item.name == find_this

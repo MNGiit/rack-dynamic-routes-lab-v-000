@@ -18,8 +18,7 @@ class Application
     # route_match ? route_item : route_not_found
     
     if route_match
-      # item_name = req.path.split("/items/").last
-      route_item(resp)
+      route_item(resp, item_name)
     else
       route_not_found(resp)
     end # end of nested if
@@ -27,7 +26,7 @@ class Application
     resp.finish
   end # end of def call
   
-  def route_item(resp)
+  def route_item(resp, item_name)
     # item_name = req.path.split("/items/").last
       if item =@@items.detect { |i| i.name == item_name }
         resp.write item.price

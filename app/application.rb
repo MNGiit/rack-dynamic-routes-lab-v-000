@@ -24,7 +24,7 @@ class Application
           found_item ||= item if item.name == find_this
         end
         # show item price
-        resp.write found_item.price
+        resp.write found_item
       else
         resp.status = 400
         resp.write "Item not found"

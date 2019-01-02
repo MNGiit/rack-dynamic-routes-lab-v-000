@@ -29,7 +29,11 @@ class Application
     
     resp.finish
   end # end of def call
-
+  
+  def route_item
+    
+  end
+  
 end # end of class
 
     # find_this = req.path.split("/items").last if route_match

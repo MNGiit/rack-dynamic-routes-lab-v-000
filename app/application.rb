@@ -16,11 +16,10 @@ class Application
     route_match = false
     route_match = true if req.path.match(/items/)
     find_this = req.path.split("/items").last if route_match == true
-    
-    if req.path.match(/items/)
+    found_item = ""
+    if route_match
       # check for item name
       if find_this
-        found_item = ""
         @@items.each do |item|
           found_item = item if item.name == find_this
         end

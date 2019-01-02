@@ -13,10 +13,15 @@ class Application
     @@items = Item.all
     
     route_match = true if req.path.match(/items/)
-    item_name = ""
     item_name = req.path.split("/items/").last if route_match
     if route_match
-      route_item
+      # item_name = req.path.split("/items/").last
+      if item =@@items.find{ |i| i.name == item_name }
+        resp.write item.price
+      else 
+        resp.status = 400
+        resp.write "Item not found"
+      end
     else
       resp.status = 404
       resp.write "Route not found"
@@ -26,7 +31,7 @@ class Application
   end # end of def call
   
   def route_item
-    # item_name = req.path.split("/items/").last
+    item_name = req.path.split("/items/").last
       if item =@@items.find{ |i| i.name == item_name }
         resp.write item.price
       else 

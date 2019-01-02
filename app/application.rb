@@ -35,7 +35,7 @@ class Application
     #  resp.write "Route not found"
      # resp.status = 404
     # end # end of nested if
-    if req.path.match(/items/)
+    if route_match
       item_name = req.path.split("/items/").last
       if item =@@items.find{ |i| i.name == item_name }
         resp.write item.price

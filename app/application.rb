@@ -12,11 +12,11 @@ class Application
     
     @@items = Item.all
     
-    # can't get route_match to work
     route_match = false
     route_match = true if req.path.match(/items/)
     find_this = req.path.split("/items").last if route_match == true
     found_item = nil
+    
     if route_match
       # check for item name
       if find_this
@@ -24,6 +24,7 @@ class Application
           found_item ||= item if item.name == find_this
         end
         # show item price
+        puts found_item
         resp.write found_item.price
       else
         resp.status = 400

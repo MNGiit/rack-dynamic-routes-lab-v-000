@@ -13,11 +13,11 @@ class Application
     @@items = Item.all
     
     # can't get route_match to work
-    # @route_match = false
-    # @route_match = true if req.path.match(/items/)
-    find_this = req.path.split("/items").last if route_match? == true
+    route_match = false
+    route_match = true if req.path.match(/items/)
+    find_this = req.path.split("/items").last if route_match == true
     
-    if req.path.match(/items/)
+    if route_match
       # check for item name
       if item_name = req.path.split("/items/").last
         found_item = ""

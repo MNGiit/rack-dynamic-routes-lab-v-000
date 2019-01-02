@@ -44,7 +44,7 @@ class Application
   
   def route_not_found(resp)
     resp.status = 404
-    resp.write "Item not found"
+    resp.write "Route not found"
   end # end of def route_not_found
   
 end # end of class

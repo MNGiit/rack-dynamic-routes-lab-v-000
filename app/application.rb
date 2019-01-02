@@ -26,7 +26,7 @@ class Application
         resp.write "Item not found"
       end
     else
-      route_not_found
+      self.route_not_found
     end # end of nested if
     
     resp.finish

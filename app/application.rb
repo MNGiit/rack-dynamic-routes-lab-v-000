@@ -17,12 +17,7 @@ class Application
     
     # route_match ? route_item : route_not_found
     route_match ? route_item(resp, item_name) : route_not_found(resp)
-    # if route_match
-    #  route_item(resp, item_name)
-    # else
-    #  route_not_found(resp)
-    # end # end of nested if
-    
+
     resp.finish
   end # end of def call
   

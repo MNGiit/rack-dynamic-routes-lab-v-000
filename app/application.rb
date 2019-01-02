@@ -27,7 +27,6 @@ class Application
   end # end of def call
   
   def route_item(resp, item_name)
-    # item_name = req.path.split("/items/").last
       if item = @@items.detect { |i| i.name == item_name }
         resp.write item.price
       else 

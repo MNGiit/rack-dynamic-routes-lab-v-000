@@ -16,8 +16,6 @@ class Application
     # find_this = req.path.split("/items").last if route_match
     # found_item = ""
     
-
-    
     if route_match
       item_name = req.path.split("/items/").last
       if item =@@items.find{ |i| i.name == item_name }

@@ -15,6 +15,8 @@ class Application
     route_match = true if req.path.match(/items/)
     item_name = req.path.split("/items/").last if route_match
     
+    # route_match ? route_item : route_not_found
+    
     if route_match
       # item_name = req.path.split("/items/").last
       if item =@@items.detect { |i| i.name == item_name }
@@ -40,6 +42,11 @@ class Application
         resp.write "Item not found"
       end
   end # end of def route_item
+  
+  def route_not_found
+    resp.status = 404
+    resp.write "Item not found"
+  end # end of def route_not_found
   
 end # end of class
 

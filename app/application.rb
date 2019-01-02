@@ -21,7 +21,7 @@ class Application
       # if item exists look for price
       if find_this
         @@items.each do |item|
-          found_item = item if item.name == find_this
+          found_item = item if item.name == find_this.name
         end
         # show item price
         resp.write found_item.price

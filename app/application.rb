@@ -25,7 +25,7 @@ class Application
       #  end
         # show item price
       #  resp.write found_item.price
-      if item =@@items.find{|i| i.name == find_this }
+      if item =@@items.find{ |i| i.name == find_this }
         resp.write item.price
       else
         resp.status = 400

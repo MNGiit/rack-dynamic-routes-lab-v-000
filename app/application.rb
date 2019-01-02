@@ -13,6 +13,7 @@ class Application
     @@items = Item.all
     
     route_match = true if req.path.match(/items/)
+    item_name = ""
     item_name = req.path.split("/items/").last if route_match
     if route_match
       route_item

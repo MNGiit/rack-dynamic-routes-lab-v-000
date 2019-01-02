@@ -17,7 +17,7 @@ class Application
     find_this = req.path.split("/items").last if route_match
     found_item = nil
     
-    if route_match
+    # if route_match
       # check for item name
       # if find_this
       #  @@items.each do |item|
@@ -25,17 +25,19 @@ class Application
       #  end
         # show item price
       #  resp.write found_item.price
-      if item =@@items.find{ |i| i.name == find_this }
-        resp.write item.price
-      else
-        resp.status = 400
-        resp.write "Item not found"
-      end
-    else
+      # if item =@@items.find{ |i| i.name == find_this }
+      #  resp.write item.price
+      # else
+      #  resp.status = 400
+      #  resp.write "Item not found"
+      # end
+    # else
       # route_match is false, route was not found
-      resp.write "Route not found"
-      resp.status = 404
-    end
+    #  resp.write "Route not found"
+    #  resp.status = 404
+    # end # end of nested if
+    
+    
     
     resp.finish
   end # end of def call

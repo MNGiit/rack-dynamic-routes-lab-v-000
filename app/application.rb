@@ -17,7 +17,7 @@ class Application
     route_match = true if req.path.match(/items/)
     find_this = req.path.split("/items").last if route_match == true
     
-    if route_match
+    if req.path.match(/items/)
       # check for item name
       if find_this
         found_item = ""

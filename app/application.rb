@@ -13,9 +13,7 @@ class Application
     @@items = Item.all
     
     route_match = true if req.path.match(/items/)
-    # find_this = req.path.split("/items").last if route_match
-    # found_item = ""
-    
+
     if route_match
       item_name = req.path.split("/items/").last
       if item =@@items.find{ |i| i.name == item_name }
@@ -34,6 +32,9 @@ class Application
 
 end # end of class
 
+    # find_this = req.path.split("/items").last if route_match
+    # found_item = ""
+    
     # if route_match
       # check for item name
       # if item exists look for price

@@ -36,7 +36,25 @@ class Application
 
 end # end of class
 
-
+    # if route_match
+      # check for item name
+      # if item exists look for price
+    #  if find_this
+     #   @@items.each do |item|
+      #    found_item = item if item.name == find_this
+    #    end
+        # show item price
+      #  resp.write found_item.price
+       # else, item wasn't found
+    #   else
+    #    resp.status = 400
+    #    resp.write "Item not found"
+    #   end
+     # route_match is false, route was not found
+    # else
+    #  resp.write "Route not found"
+     # resp.status = 404
+    # end # end of nested if
 
 
 

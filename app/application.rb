@@ -26,8 +26,7 @@ class Application
         resp.write "Item not found"
       end
     else
-      resp.status = 404
-      resp.write "Route not found"
+      route_not_found
     end # end of nested if
     
     resp.finish

@@ -19,12 +19,14 @@ class Application
     
     if route_match
       # check for item name
-      if find_this
-        @@items.each do |item|
-          found_item ||= item if item.name == find_this
-        end
+      # if find_this
+      #  @@items.each do |item|
+      #    found_item ||= item if item.name == find_this
+      #  end
         # show item price
-        resp.write found_item.price
+      #  resp.write found_item.price
+      if item =@@items.find{|i| i.name == item_name}
+        resp.write item.price
       else
         resp.status = 400
         resp.write "Item not found"

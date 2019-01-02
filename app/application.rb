@@ -19,7 +19,6 @@ class Application
     
     if route_match
       # check for item name
-      binding.pry
       if find_this
         found_item = ""
         @@items.each do |item|
